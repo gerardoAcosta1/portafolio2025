@@ -1,0 +1,6 @@
+.main__proyectPage{
+    flex: 1;
+    display: flex;        /* o grid, según tu diseño */
+  flex-direction: column;
+   
+}

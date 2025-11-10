@@ -1,0 +1,48 @@
+.Tablas__operaciones {
+   
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
+    /* 5 columnas */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+    max-width: max-content;
+
+}
+
+
+
+.random__operaciones {
+
+    width: 170px;
+    height: max-content;
+
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    
+    font-family: monospace;
+    text-align: center;
+
+    font-size: 15px;
+    background-color: #1d608d;
+    color: white;
+
+}
+
+@keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .page-enter {
+    animation: slideInFromRight 0.4s ease-out forwards;
+
+  }

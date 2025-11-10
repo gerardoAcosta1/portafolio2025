@@ -1,0 +1,151 @@
+.main__gestor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(253, 235, 235, 0.5);
+    overflow: hidden;
+    background-image: url('../../../../public/images/Magic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+.cabecera__gestor {
+    display: 1;
+    min-height: 8%;
+    color: white;
+    border: 20px solid black;
+    text-align: center;
+
+    background-color: black;
+}
+
+
+
+.container__game{
+
+  width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    
+
+}
+.reels-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .reel {
+    height: 240px; /* altura visible de 3 imágenes si son de 80px */
+    width: 120px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  .reel-strip {
+    display: flex;
+    flex-direction: column;
+  }
+  .reel-amite{
+    animation: spin 0.3s linear infinite;
+
+  }
+  .slot-image {
+    width: 120px;
+    height: 80px;
+    object-fit: contain;
+    user-select: none;
+  }
+  
+  .container__butoms{
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+   }
+  .button__iniciar{
+
+    width: 100px;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgb(25, 100, 35);
+    color:white;
+    box-shadow: 2px 2px 2px 2px rgb(21, 22, 21);
+    user-select: none;
+    
+  }
+ 
+  .button__parar{
+
+    width: 100px;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgb(233, 70, 41);
+    color: white;
+
+    box-shadow: 2px 2px 2px 2px rgb(32, 32, 32);
+    user-select: none;
+
+  }
+  .button__detenerColumna{
+    border: none;
+    padding: 12px;
+    background-color: rgb(95, 197, 75);
+    color:white;
+    border-radius: 4px;
+    margin: 12px;
+    cursor: pointer;
+  }
+  .button__precionado{
+    box-shadow: none;
+    width: 98px;
+  }
+  @keyframes spin {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%); /* Mueve la mitad si duplicaste las imágenes */
+    }
+  }
+  
+
+  .row {
+    display: flex;
+    flex-direction: row; /* horizontal */
+  }
+  
+  .cell {
+    padding: 2px; /* opcional para espacio entre imágenes */
+  }
+  
+  .tablita {
+    width: 30px;
+    height: 30px;
+  }
+
+  .container__tablas{
+    display: flex;
+    align-items: center;
+  }
+  .minisymbols__tablas{
+margin-top: 12px;
+margin-left: 12rem;
+  }

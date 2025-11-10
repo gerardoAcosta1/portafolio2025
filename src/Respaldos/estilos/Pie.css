@@ -1,0 +1,36 @@
+.Pie__Main{
+    
+    width: 100%;
+    height: 20%;
+    background-color: rgb(107, 107, 103);
+    position: relative;
+
+}
+.Pie__Rigth{
+
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    right: 0;
+}
+
+.Pie__Central{
+
+    width: 40%;
+    height: 100%;
+    background-color: rgb(145, 41, 41);
+    position: absolute;
+    left: 30%;
+
+}
+
+.Pie__Left{
+
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+
+}

@@ -1,0 +1,20 @@
+.Cabecera__Main {
+  height: 10%;
+  background-color: rgba(255, 255, 255, 0.979);
+  position: relative;
+}
+
+.bxs-user-pin {
+  width: max-content;
+  height: max-content;
+
+  font-weight: 50;
+  font-size: 80px;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+
+  cursor: pointer;
+  color: green;
+
+}
