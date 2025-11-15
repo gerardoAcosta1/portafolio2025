@@ -68,12 +68,14 @@ const BodegaEnCasa = () => {
     }
 
     console.log(objeto)
+    
    // await api.crearObjeto(objeto).then(data => console.log(data))
    // await api.getObjetos().then(data => setObjetos(data))
     setNombre("")
     setNumeroCaja("")
 
   }
+
 
 
   const eliminarObjeto = async (objeto) => {

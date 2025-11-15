@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import '../styles/Projects.css'
-import imgContador from '../assets/Imagenes proyectos/digital.png';
+import imgContador from '../assets/Imagenes proyectos/image7.png';
 import imgPersonal from '../assets/Imagenes proyectos/personal.png';
 import imgTareas from '../assets/Imagenes proyectos/tareas.png';
 import { Link } from 'react-router-dom';
 const Projects = () => {
 
   const [proyectos, setProyectos] = useState([
-    { id: 1, nombre: "Contador React", ruta: "contador" ,descripcion: "Contador de clicks usando useState.", imagen: imgContador },
+    { id: 1, nombre: "Ecommerce", ruta: "ecommerce" ,descripcion: "trata de una página de ecommerce, se desarrollada tanto el back como el front", imagen: imgContador },
     { id: 2, nombre: "Bodega en casa", ruta: "Bodega", descripcion: "Aplicación de inventario en casa", imagen: imgPersonal },
     { id: 3, nombre: "Casino",  ruta: "casino", descripcion: "Aplicación de juego de casino (tragamonedas)", imagen: imgTareas }
   ]);

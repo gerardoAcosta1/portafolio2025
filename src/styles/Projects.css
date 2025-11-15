@@ -28,6 +28,10 @@
 
 .Target__container{
     width: 250;
+    max-width: 300px;
+    min-width: 300px;
+    min-height: 200px;
+    max-height: 250px;
     height:max-content; /* Fijo, no mínimo */
     display: flex;
     flex-direction: column;
@@ -46,7 +50,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 
-    background: linear-gradient(to bottom, #ffffff8f 60%, #60a5fa 40%);
+    background: linear-gradient(to bottom, #ffffff8f 60%, #1f4b81 40%);
     padding: 3rem 1rem;
 }
 
@@ -55,7 +59,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
  }
 .Target__title{
-
     
 }
 .Target__imagen{
@@ -66,8 +69,8 @@
 .bx-briefcase{
     color: rgb(219, 238, 219);}
 .Target__description{
-
-    color: #444;
+    margin-top: 12px;
+    color: #94cddb;
 }
 .Target__verMas{
 
