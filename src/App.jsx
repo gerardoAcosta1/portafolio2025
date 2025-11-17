@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProyectoPage from './pages/Proyectos/ProyectoPage';
-import { enviarMensaje } from "./pages/utils/socket.js"
 
 // En algún lugar de tu código, por ejemplo una función:
 
@@ -15,7 +14,6 @@ import { enviarMensaje } from "./pages/utils/socket.js"
 function App() {
 
 
-  enviarMensaje("conectar base");
 
 
   return (
