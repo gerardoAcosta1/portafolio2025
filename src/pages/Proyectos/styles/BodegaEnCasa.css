@@ -1,8 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 
-.container__bodega{
+.container__bodega {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -10,17 +9,28 @@
     font-family: "Quicksand", sans-serif;
     background-color: rgb(10, 10, 9);
 
-} 
-
-.titulo__bodega{
-
-    
-    text-align: center;
-    color: rgb(238, 233, 233);
-    
 }
 
-.cuerpo__bodega{
+.titulo__bodega {
+
+
+    text-align: center;
+    color: rgb(238, 233, 233);
+
+}
+
+.input__buscarObjeto {
+
+    width: 50%;
+    padding: 12px;
+    margin: 12px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+}
+
+.cuerpo__bodega {
 
     flex: 1;
     background-color: rgba(87, 127, 150, 0.863);
@@ -29,39 +39,45 @@
     align-items: center;
 
     background-color: #0D1117;
-  color: #E6EDF3; /* texto principal */
-  font-family: 'Quicksand', sans-serif; /* o una tipografía moderna */
-  margin: 0;
-  padding: 0;
-    
+    color: #E6EDF3;
+    /* texto principal */
+    font-family: 'Quicksand', sans-serif;
+    /* o una tipografía moderna */
+    margin: 0;
+    padding: 0;
+
 }
-.container__cabecera{
+
+.container__cabecera {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.boton__prueba{
+
+.boton__prueba {
 
     padding: 12px;
     margin: 12px;
-    border:none;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     background-color: rgb(88, 155, 57);
     color: white;
     box-shadow: 2px 1px 1px 1px white;
 }
-.boton__prueba:hover{
+
+.boton__prueba:hover {
     background-color: rgb(79, 138, 52);
 }
 
-.agregarObjeto{
+.agregarObjeto {
     padding: 12px;
     border: none;
     border-radius: 4px;
-    
+
 }
-.agregar__caja{
+
+.agregar__caja {
 
     font-size: 12px;
     padding: 12px;
@@ -72,7 +88,8 @@
     border: none;
     border-radius: 4px;
 }
-.sin__sombra{
+
+.sin__sombra {
 
     padding: 10px;
     box-shadow: none;
@@ -80,19 +97,55 @@
 
 .container__cajas {
     display: flex;
-    flex-wrap: wrap;   /* ahora sí se bajan cuando no caben */
+    flex-wrap: wrap;
+    /* ahora sí se bajan cuando no caben */
     gap: 12px;
     margin-left: 10px;
+    position: relative;
 }
 
-.container__caja {   
+.mensaje__inicial {
+
+
+    width: 450px;
+    height: max-content;
+    color: #94cddb;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000000e3;
+    position: absolute;
+    display: flex;
+    right: 50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.ocultar__mensajeInicial{
+    display: none;
+}
+.desciption__inicial {
+    margin: 20px;
+}
+
+.button__inicial {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1f4b81;
+    color: white;
+    cursor: pointer;
+}
+
+.container__caja {
     margin: 12px;
     display: flex;
-    flex-direction: column; /* ya no hace falta wrap aquí */
+    flex-direction: column;
+    /* ya no hace falta wrap aquí */
     border: 1px solid rgb(90, 182, 194);
     /*------------------*/
-    
-    
+
+
     background-color: #0D1117;
     padding: 20px;
     min-height: 100vh;
@@ -111,16 +164,17 @@
 
 
     background-color: #161B22;
-  border: 1px solid #1F2937;
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  color: #E6EDF3;
-    
+    border: 1px solid #1F2937;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    color: #E6EDF3;
+
     /* flex: 1;   <-- quítalo */
 }
-.titulo__caja{
+
+.titulo__caja {
     background-color: rgb(125, 185, 219);
     background-color: #383824;
 
@@ -130,86 +184,108 @@
     height: max-content;
     display: flex;
     justify-content: center;
-    box-shadow: 2px 2px 2px 2px  #2A2A3D;
-    color:#0d1113;
+    box-shadow: 2px 2px 2px 2px #2A2A3D;
+    color: #0d1113;
 
     position: relative;
 
 
 
     font-size: 18px;
-  color: #00BFFF; /* Azul tecnológico */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    color: #00BFFF;
+    /* Azul tecnológico */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.eliminar__caja{
+.eliminar__caja {
     position: absolute;
     right: 12px;
     top: -15px;
     color: yellow;
 }
-.container__objetos{
-    flex:1;   
-     overflow-y: auto;
-     width: 100%;
-     
+
+.container__objetos {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
 
 
-     
+
+
 
 
 }
-.ul__objeto{
-}
-.cuadro__objeto{
+
+.ul__objeto {}
+
+.cuadro__objeto {
     display: flex;
     border: 1px solid #2A2A3D;
     background-color: rgb(201, 112, 161);
     background-color: #f8f3f1;
 
 
-    background-color: #161B22; /* mismo tono que la caja o un poco más oscuro */
+    background-color: #161B22;
+    /* mismo tono que la caja o un poco más oscuro */
     border-radius: 8px;
     padding: 8px 12px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+
     /* Efecto de profundidad hacia adentro */
     box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.6),
-                inset -2px -2px 6px rgba(255, 255, 255, 0.05);
-    
+        inset -2px -2px 6px rgba(255, 255, 255, 0.05);
+
 }
-.nombre__objeto{
+
+.objeto__encontrado {
+    background-color: #ffda6a;
+    /* Un color amarillo o el que prefieras */
+    border: 1px solid #ffc107;
+    transition: background-color 0.3s ease;
+}
+
+/* Opcional: puedes querer que el texto sea más oscuro para mejor contraste */
+.objeto__encontrado .nombre__objeto {
+    color: #333;
+}
+
+.nombre__objeto {
 
     width: 100%;
     font-size: 1rem;
-    font-weight: 500;;
-    font-style:oblique;
+    font-weight: 500;
+    ;
+    font-style: oblique;
     color: rgb(231, 229, 229);
-   
 
 
-font-size: 14px;
-  font-weight: 500;
-  color: #E6EDF3;  /* gris muy claro, buen contraste */
-  letter-spacing: 0.5px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #E6EDF3;
+    /* gris muy claro, buen contraste */
+    letter-spacing: 0.5px;
 }
-.eliminar__objeto{
+
+.eliminar__objeto {
     width: 10%;
     margin-left: 12px;
     color: rgb(190, 192, 90);
 
 
 
-    color: #FF4757; /* Rojo moderno */
-  cursor: pointer;
-  transition: color 0.3s;
+    color: #FF4757;
+    /* Rojo moderno */
+    cursor: pointer;
+    transition: color 0.3s;
 }
-.eliminar__objeto:hover{
+
+.eliminar__objeto:hover {
     font-size: 20px;
     cursor: pointer;
 
@@ -217,7 +293,8 @@ font-size: 14px;
     color: #FF6B81;
 
 }
-.Pie__Caja{
+
+.Pie__Caja {
     width: 100%;
     height: 2em;
     background-color: rgb(145, 166, 167);
@@ -227,7 +304,7 @@ font-size: 14px;
 }
 
 
-.input__objeto{
+.input__objeto {
 
     margin-top: 10%;
     padding: 12px;
@@ -243,23 +320,26 @@ font-size: 14px;
     transition: ease-out;
     user-select: none;
 }
-.input{
+
+.input {
     border: none;
     border: 1px solid rgb(17, 194, 218);
     outline: none;
     padding: 12px;
 }
-.input__button{
+
+.input__button {
     border: none;
     border-radius: 4px;
     padding: 12px;
     font-weight: 600;
     background-color: rgb(125, 184, 211);
-    color:black; 
-    
-    
+    color: black;
+
+
 }
-.cerrar__input{
+
+.cerrar__input {
 
     width: 20px;
     position: absolute;
@@ -267,13 +347,16 @@ font-size: 14px;
     top: 0;
     cursor: pointer;
 }
-.cerrar__input:hover{
+
+.cerrar__input:hover {
     font-size: 20px;
 }
-.ocultarInputObjeto{
+
+.ocultarInputObjeto {
     display: none;
 }
-.Titulo__Agregar__Objeto{
+
+.Titulo__Agregar__Objeto {
 
     font-size: 12px;
 }
