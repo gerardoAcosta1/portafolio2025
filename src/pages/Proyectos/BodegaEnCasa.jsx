@@ -106,26 +106,30 @@ const BodegaEnCasa = () => {
     }
 
     const crearCaja = async () => {
-        const numero_caja = (cajas.length > 0 ? cajas.length : 0) + 1;
-
-        const nuevaCaja = {
-            numero_caja: numero_caja,
-            // Si tu tabla 'Cajas' tiene una columna 'seccion' obligatoria, debes incluirla aquí
-        }
-        console.log(nuevaCaja)
-        
-        // 🟢 Crear Caja usando Supabase
-        const { error } = await supabase
-            .from('Cajas')
-            .insert([nuevaCaja]);
-
-        if (error) {
-            console.error('Error al crear caja:', error);
-        } else {
-            // 🟢 Recargar datos para ver el cambio
-            fetchCajas();
-        }
-    }
+      // Calcula el número de caja (ej: 1, 2, 3...)
+      const numero_caja = (cajas.length > 0 ? cajas.length : 0) + 1;
+  
+      // 🟢 OBJETO CORREGIDO: INCLUYE LA SECCIÓN POR DEFECTO 'A'
+      const nuevaCaja = {
+          numero_caja: numero_caja,
+          seccion: 'A' // ⬅️ Valor predeterminado para cumplir con el requisito NOT NULL
+      }
+      
+      console.log("Creando caja:", nuevaCaja);
+      
+      // 🟢 Envío del objeto completo a Supabase
+      const { error } = await supabase
+          .from('Cajas')
+          .insert([nuevaCaja]);
+  
+      if (error) {
+          // Este error ya no debería ocurrir si 'seccion' está incluido.
+          console.error('Error al crear caja:', error);
+      } else {
+          // Recargar datos para actualizar la vista
+          fetchCajas(); 
+      }
+  }
 
     const eliminarCaja = async (id)=> {
         console.log("Eliminando caja con ID:", id);
