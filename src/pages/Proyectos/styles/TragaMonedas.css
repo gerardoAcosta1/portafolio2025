@@ -11,7 +11,20 @@
 
 }
 
-
+.construccion{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 12px;
+    margin: 12px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+    align-self: center;
+}
+.titulo__construccion{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
 
 .cabecera__gestor {
     display: 1;

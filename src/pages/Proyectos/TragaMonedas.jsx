@@ -70,6 +70,10 @@ const TragaMonedas = () => {
 
   return (
     <div className="main__gestor">
+      <div className='construccion'>
+          <h4 className='titulo__construccion'>este sitio está en construccion</h4>
+          <img src="" alt="" />
+      </div>
       <div className='cabecera__gestor'>
         <h1>Traga Monedas</h1>
       </div>
