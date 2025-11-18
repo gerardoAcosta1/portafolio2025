@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
 import '../Proyectos/styles/BodegaEnCasa.css'
-
-// ❌ Se elimina la importación de api para evitar referencias a localhost
-// import api from '../utils/api'; 
-
 import { supabase } from '../utils/supabaseClient.js'; // Importa el cliente inicializado
 
 
@@ -20,7 +16,6 @@ const BodegaEnCasa = () => {
     const [cargaPrimera, setCargaPrimera] = useState(true); 
 
 
-    // 🟢 FUNCIÓN CENTRAL DE CARGA (Definida afuera para ser reutilizada)
     async function fetchCajas() {
         // Cargar Cajas
         const { data: dataCajas, error: errorCajas } = await supabase
@@ -46,14 +41,11 @@ const BodegaEnCasa = () => {
     }
 
 
-    /*------------------------useefectsss */
     useEffect(() => {
-        // Este useEffect solo establece el estado de carga inicial al montar
         setCargaPrimera(true);
     }, [])
 
     useEffect(() => {
-        // Este useEffect carga los datos al inicio
         fetchCajas();
     }, []);
 
@@ -64,11 +56,9 @@ const BodegaEnCasa = () => {
 
         const nuevoObjeto = {
             nombre: nombre,
-            // Asegúrate de que el campo 'caja' en la DB sea de tipo entero.
             caja: parseInt(numeroCaja, 10) 
         }
 
-        // 🟢 Crear Objeto usando Supabase
         const { error } = await supabase
             .from('Objetos')
             .insert([nuevoObjeto]);
@@ -76,9 +66,8 @@ const BodegaEnCasa = () => {
         if (error) {
             console.error('Error al agregar objeto:', error);
         } else {
-             // 🟢 Recargar datos para ver el cambio
             fetchCajas();
-            setInputObjeto(false); // Cierra el input
+            setInputObjeto(false);
         }
         
         setNombre("");
@@ -90,8 +79,6 @@ const BodegaEnCasa = () => {
     const eliminarObjeto = async (objeto) => {
         console.log("Eliminando objeto con ID:", objeto.id_objeto);
 
-        // 🟢 Eliminar Objeto usando Supabase
-        // Asumiendo que el ID del objeto es 'id_objeto'
         const { error } = await supabase
             .from('Objetos')
             .delete()
@@ -100,33 +87,27 @@ const BodegaEnCasa = () => {
         if (error) {
             console.error('Error al eliminar objeto:', error);
         } else {
-            // 🟢 Recargar datos para actualizar la vista
             fetchCajas();
         }
     }
 
     const crearCaja = async () => {
-      // Calcula el número de caja (ej: 1, 2, 3...)
       const numero_caja = (cajas.length > 0 ? cajas.length : 0) + 1;
   
-      // 🟢 OBJETO CORREGIDO: INCLUYE LA SECCIÓN POR DEFECTO 'A'
       const nuevaCaja = {
           numero_caja: numero_caja,
-          seccion: 'A' // ⬅️ Valor predeterminado para cumplir con el requisito NOT NULL
+          seccion: 'A' 
       }
       
       console.log("Creando caja:", nuevaCaja);
       
-      // 🟢 Envío del objeto completo a Supabase
       const { error } = await supabase
           .from('Cajas')
           .insert([nuevaCaja]);
   
       if (error) {
-          // Este error ya no debería ocurrir si 'seccion' está incluido.
           console.error('Error al crear caja:', error);
       } else {
-          // Recargar datos para actualizar la vista
           fetchCajas(); 
       }
   }
@@ -134,8 +115,6 @@ const BodegaEnCasa = () => {
     const eliminarCaja = async (id)=> {
         console.log("Eliminando caja con ID:", id);
         
-        // 🟢 Eliminar Caja usando Supabase
-        // Asumiendo que el ID de la caja es 'id_caja'
         const { error: errorCaja } = await supabase
             .from('Cajas')
             .delete()
@@ -144,7 +123,6 @@ const BodegaEnCasa = () => {
         if (errorCaja) {
             console.error('Error al eliminar caja:', errorCaja);
         } else {
-            // También eliminar los objetos dentro de esta caja (opcional, dependiendo de tus reglas de DB)
             const { error: errorObjetos } = await supabase
                 .from('Objetos')
                 .delete()
@@ -154,13 +132,11 @@ const BodegaEnCasa = () => {
                 console.error('Error al eliminar objetos asociados:', errorObjetos);
             }
             
-            // 🟢 Recargar datos para actualizar la vista
             fetchCajas();
         }
     }
 
 
-    /*------------------ LÓGICA DE FILTRADO (Se mantiene igual) -------------------*/
     
     const cajasFiltradas = cajas.filter(caja => {
         if (!cosa) {
@@ -199,7 +175,7 @@ const BodegaEnCasa = () => {
                     onMouseDown={() => setSinSombra(false)}
                     onMouseUp={() => setSinSombra(true)}
                     onMouseLeave={() => setSinSombra(true)}
-                    onClick={fetchCajas} // 🟢 Usar fetchCajas para actualizar
+                    onClick={fetchCajas} 
                 > Actualizar </button>
                 <button className='agregarObjeto' onClick={() => setInputObjeto(true)}>Agregar Objeto</button>
                 <button className='agregar__caja' onClick={crearCaja}>agregar caja</button>
@@ -219,8 +195,6 @@ const BodegaEnCasa = () => {
                             
                             <div className='container__objetos'>
                                 {objetos && objetos.filter(objeto => objeto.caja == caja.id_caja).map((objeto, index) => {
-                                    // 🟢 LÓGICA PARA RESALTAR EL OBJETO
-                                    // Asumiendo que 'id_objeto' existe en tu tabla de objetos para la eliminación.
                                     const textoBuscado = cosa.toLowerCase();
                                     const esEncontrado = cosa && objeto.nombre.toLowerCase().includes(textoBuscado);
                                     const claseCuadroObjeto = `cuadro__objeto ${esEncontrado ? 'objeto__encontrado' : ''}`;

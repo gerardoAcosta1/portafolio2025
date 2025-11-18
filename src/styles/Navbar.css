@@ -1,5 +1,9 @@
+/*
+======================================================
+1. ESTILOS BASE (Desktop/General)
+======================================================
+*/
 .Navbar{
-
     background-color: #1f2937; /* gris oscuro elegante */
     padding: 1rem 2rem;
     display: flex;
@@ -10,21 +14,58 @@
     position: sticky;
     top: 0;
     z-index: 10;
-
 }
 
 .Navbar a{
     color: #cbd5e1; /* gris azulado claro */
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+    margin: 0 1rem; /* El margen original es la causa del desborde en móvil */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .Navbar__Links{
-
     list-style: none;
     display: flex;
     gap: 1rem;
 }
 
+/*
+======================================================
+2. MEDIA QUERY (Ajustes para Móviles < 768px)
+======================================================
+*/
+@media (max-width: 768px) {
+    
+    .Navbar {
+        /* Reducir el padding horizontal para ganar espacio */
+        padding: 0.75rem 1rem; 
+    }
+    
+    /* 🟢 CORRECCIÓN 1: Reducir el margen entre enlaces */
+    .Navbar a {
+        font-size: 0.9rem;
+        margin: 0 0.4rem; /* Reducido de 1rem a 0.4rem */
+    }
+
+    /* 🟢 CORRECCIÓN 2: Reducir la separación general y el tamaño de fuente en el contenedor */
+    .Navbar__Links {
+        gap: 0.5rem; /* Separación entre elementos más pequeña */
+        /* Si tu Navbar tiene un logo o título a la izquierda, puedes reducir el tamaño de fuente aquí */
+    }
+    
+    /* * Si la corrección de márgenes NO es suficiente (si hay muchos enlaces),
+    * deberías usar un Menú Hamburguesa. 
+    * Si quieres que siempre se muestren, esta reducción es la mejor opción.
+    */
+}
+
+@media (max-width: 480px) {
+    /* Ajustes extra para pantallas muy estrechas */
+    
+    /* Si aún no cabe, forzamos un tamaño de fuente aún más pequeño */
+    .Navbar a {
+        font-size: 0.8rem;
+        margin: 0 0.3rem;
+    }
+}

@@ -11,11 +11,11 @@ const Projects = () => {
     { 
       id: 1, 
       nombre: "Ecommerce", 
-      // 🟢 En lugar de la ruta interna, guardamos la URL externa completa
+      
       ruta: "https://ecommercefinal2025.netlify.app", 
       descripcion: "trata de una página de ecommerce, se desarrollada tanto el back como el front", 
       imagen: imgContador,
-      esExterno: true // 🟢 Bandera para identificar el link externo
+      esExterno: true 
     },
     { id: 2, nombre: "Bodega en casa", ruta: "/proyectos/Bodega", descripcion: "Aplicación de inventario en casa", imagen: imgPersonal, esExterno: false },
     { id: 3, nombre: "Casino", ruta: "/proyectos/casino", descripcion: "Aplicación de juego de casino (tragamonedas)", imagen: imgTareas, esExterno: false }
@@ -34,13 +34,13 @@ const Projects = () => {
             <img src={proyecto.imagen} className="Target__imagen" />
             <p className="Target__description">{proyecto.descripcion}</p>
 
-            {/* 🟢 Lógica Condicional para el Enlace */}
+           
             {proyecto.esExterno ? (
               <a 
                 className='Target__verMas' 
                 href={proyecto.ruta} 
-                target="_blank" /* 🟢 Abre en nueva pestaña */
-                rel="noopener noreferrer" /* 🟢 Recomendado por seguridad */
+                target="_blank" 
+                rel="noopener noreferrer" 
               >
                 Ir a Página
               </a>

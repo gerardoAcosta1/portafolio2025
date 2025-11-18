@@ -1,49 +1,51 @@
-.Projects__main{
+/*
 
+*/
+.Projects__main{
     width: 100%;
-    min-height: 100%;
+    
+    flex-grow: 1; 
+    min-height: min-content; 
+    
+    padding-top: 5rem; 
+    padding-bottom: 2rem; 
 
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: #f1f2f4;
-
-
 }
+
 .Projects__title{
-    color: rgb(45, 120, 155)
+    color: rgb(45, 120, 155);
+    margin-bottom: 0.5rem;
 }
-.Projects__container{
 
+.Projects__container{
     width: 100%;
-    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5rem;
+    margin-top: 2rem; 
     gap: 4rem;
-   
 }
 
 .Target__container{
-    width: 250;
-    max-width: 300px;
-    min-width: 300px;
-    min-height: 200px;
-    max-height: 250px;
-    height:max-content; /* Fijo, no mínimo */
+    max-width: 300px; 
+    min-width: 300px; 
+    height:max-content; 
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantiene el botón abajo si hay espacio */
     align-items: center;
-
 
     border-radius: 12px;
     box-shadow:
-      inset 0 1px 1px rgba(31, 30, 30, 0.6),  /* brillo interno */
-      inset 0 -1px 1px rgba(0, 0, 0, 0.05),      /* sombra interior baja */
-      0 4px 10px rgba(0, 0, 0, 0.1);             /* sombra externa */
+      inset 0 1px 1px rgba(31, 30, 30, 0.6), 
+      inset 0 -1px 1px rgba(0, 0, 0, 0.05),
+      0 4px 10px rgba(0, 0, 0, 0.1); 
     border: 1px solid #b0b8c1;
     color: #1f2937;
     font-family: 'Poppins', sans-serif;
@@ -58,40 +60,69 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
  }
+
 .Target__title{
     
 }
+
 .Target__imagen{
     width: 120px;
     height: 120px;
 }
 
 .bx-briefcase{
-    color: rgb(219, 238, 219);}
+    color: rgb(219, 238, 219);
+}
+
 .Target__description{
-    margin-top: 12px;
+    margin-top: 50px;
     color: #94cddb;
 }
-.Target__verMas{
 
+.Target__verMas{
     color: white;
     padding: 12px;
     outline: none;
     text-decoration: none;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
 }
 
 .contact-cta{
-
+    
 }
+
 
 
 @media (max-width: 600px) {
+    
+    .Projects__main{
+        min-height: min-content; 
+        padding-top: 5rem; 
+        padding-bottom: 2rem; 
+    }
 
     .Projects__container{
         flex-direction: column;
+        gap: 2rem; 
+        margin-top: 1.5rem;
+    }
+
+    .Target__container{
+        width: 90%; 
+        max-width: 90%; 
+        min-width: 90%; 
+        padding: 1.5rem 1rem; 
+    }
+    
+    .Target__description, 
+    .Target__verMas { 
+        max-width: 100%; 
+        font-size: 0.9rem;
     }
 }
 
+/* Estilos de animación */
 @keyframes slideInFromRight {
     from {
       opacity: 0;
@@ -101,9 +132,8 @@
       opacity: 1;
       transform: translateX(0);
     }
-  }
-  
-  .page-enter {
+ }
+ 
+ .page-enter {
     animation: slideInFromRight 0.4s ease-out forwards;
-
-  }
+ }
